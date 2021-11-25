@@ -12,10 +12,10 @@ public class StudentList {
 
 			try {
 				BufferedReader s = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
-				String r = s.readLine();
-				String i[] = r.split(",");
+				String fileText = s.readLine();
+				String student[] = fileText.split(",");
 
-				for (String j : i) {
+				for (String j : student) {
 					System.out.println(j);
 				}
 			} catch (Exception e) {}
@@ -30,12 +30,12 @@ public class StudentList {
 
 			try {
 				BufferedReader s = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
-				String r = s.readLine();
-				System.out.println(r);
-				String i[] = r.split(",");
+				String fileText  = s.readLine();
+				System.out.println(fileText );
+				String student[] = fileText .split(",");
 				Random x = new Random();
 				int y = x.nextInt();
-				System.out.println(i[y]);
+				System.out.println(student[y]);
 			} catch (Exception e) {}
 
 			System.out.println("Data Loaded.");
@@ -48,12 +48,12 @@ public class StudentList {
 
 			try {
 				BufferedWriter s = new BufferedWriter(new FileWriter("students.txt", true));
-				String t = args[0].substring(1);
+				String newStudent = args[0].substring(1);
 				Date d = new Date();
 				String df = "dd/mm/yyyy-hh:mm:ss a";
 				DateFormat dateFormat = new SimpleDateFormat(df);
 				String fd = dateFormat.format(d);
-				s.write(", " + t + "\nList last updated on " + fd);
+				s.write(", " + newStudent + "\nList last updated on " + fd);
 				s.close();
 			} catch (Exception e) {}
 
@@ -67,14 +67,14 @@ public class StudentList {
 
 			try {
 				BufferedReader s = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
-				String r = s.readLine();
-				String i[] = r.split(",");
+				String fileText = s.readLine();
+				String student[] = fileText.split(",");
 				boolean done = false;
-				String t = args[0].substring(1);
+				String searchStudent = args[0].substring(1);
 
-				for (int idx = 0; idx < i.length && !done; idx++) {
+				for (int idx = 0; idx < student.length && !done; idx++) {
 
-					if (i[idx].equals(t)) {
+					if (student[idx].equals(searchStudent)) {
 						System.out.println("We found it!");
 						done = true;
 					}
@@ -91,8 +91,8 @@ public class StudentList {
 
 			try {
 				BufferedReader s = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
-				String D = s.readLine();
-				char a[] = D.toCharArray();
+				String fileText = s.readLine();
+				char a[] = fileText.toCharArray();
 				boolean in_word = false;
 				int count = 0;
 
