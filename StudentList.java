@@ -34,23 +34,25 @@ public class StudentList {
 
 	public static void main(String[] args) {
 
+		Constants cons = new Constants();
+
 		// Check arguments
 		if (args[0].equals("a")) {
 
-			System.out.println("Loading data ...");
+			System.out.println(cons.a);
 			String fileText = read();
 			String student[] = fileText.split(",");
 
 			for (String j : student) {
 				System.out.println(j);
 			}
-			System.out.println("Data Loaded.");
+			System.out.println(cons.b);
 		} 
 
 		
 		else if (args[0].equals("r")) {
 
-			System.out.println("Loading data ...");
+			System.out.println(cons.a);
 
 				String fileText  = read();
 				//System.out.println(fileText );
@@ -60,22 +62,22 @@ public class StudentList {
 				System.out.println(student[y]);
 			
 
-			System.out.println("Data Loaded.");
+				System.out.println(cons.b);
 		} 
 
 		
 		else if (args[0].contains("+")) {
 
-			System.out.println("Loading data ...");
+			System.out.println(cons.a);
 			String newStudent = args[0].substring(1);
 			write(newStudent);
-			System.out.println("Data Loaded.");
+			System.out.println(cons.b);
 		} 
 		
 		
 		else if (args[0].contains("?")) {
 
-			System.out.println("Loading data ...");
+			System.out.println(cons.a);
 
 				String fileText =read();
 				String student[] = fileText.split(",");
@@ -90,13 +92,13 @@ public class StudentList {
 					}
 				}
 
-			System.out.println("Data Loaded.");
+				System.out.println(cons.b);
 		} 
 		
 		
 		else if (args[0].contains("c")) {
 
-			System.out.println("Loading data ...");
+			System.out.println(cons.a);
 
 				String fileText = read();
 				char a[] = fileText.toCharArray();
@@ -119,7 +121,7 @@ public class StudentList {
 				}
 				System.out.println(count + " word(s) found " + a.length);
 
-			System.out.println("Data Loaded.");
+				System.out.println(cons.b);
 		}
 
 
