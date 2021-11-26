@@ -40,8 +40,7 @@ public class StudentList {
 		if (args[0].equals("a")) {
 
 			System.out.println(cons.a);
-			String fileText = read();
-			String student[] = fileText.split(",");
+			String student[] = read().split(",");
 
 			for (String j : student) {
 				System.out.println(j);
@@ -54,14 +53,11 @@ public class StudentList {
 
 			System.out.println(cons.a);
 
-				String fileText  = read();
-				//System.out.println(fileText );
-				String student[] = fileText .split(",");
+				String student[] = read().split(",");
 				Random x = new Random();
 				int y = x.nextInt(student.length);
 				System.out.println(student[y]);
 			
-
 				System.out.println(cons.b);
 		} 
 
@@ -69,8 +65,7 @@ public class StudentList {
 		else if (args[0].contains("+")) {
 
 			System.out.println(cons.a);
-			String newStudent = args[0].substring(1);
-			write(newStudent);
+			write(args[0].substring(1));
 			System.out.println(cons.b);
 		} 
 		
@@ -79,14 +74,11 @@ public class StudentList {
 
 			System.out.println(cons.a);
 
-				String fileText =read();
-				String student[] = fileText.split(",");
+				String student[] = read().split(",");
 				boolean done = false;
-				String searchStudent = args[0].substring(1);
-
 				for (int idx = 0; idx < student.length && !done; idx++) {
 
-					if (student[idx].equals(searchStudent)) {
+					if (student[idx].equals(args[0].substring(1))) {
 						System.out.println("We found it!");
 						done = true;
 					}
@@ -100,28 +92,27 @@ public class StudentList {
 
 			System.out.println(cons.a);
 
-				String fileText = read();
-				char a[] = fileText.toCharArray();
-				boolean in_word = false;
-				int count = 0;
+			char a[] = read().toCharArray();
+			boolean in_word = false;
+			int count = 0;
 
-				for (char c : a) {
+			for (char c : a) {
 
-					if (c == ' ') {
+				if (c == ' ') {
 
-						if (!in_word) {
-							count++;
-							in_word = true;
-						} 
+					if (!in_word) {
+						count++;
+						in_word = true;
+					} 
 						
-						else {
-							in_word = false;
-						}
+					else {
+						in_word = false;
 					}
 				}
-				System.out.println(count + " word(s) found " + a.length);
+			}
+			System.out.println(count + " word(s) found " + a.length);
 
-				System.out.println(cons.b);
+			System.out.println(cons.b);
 		}
 
 
