@@ -34,6 +34,16 @@ public class StudentList {
 
 	public static void main(String[] args) {
 
+	
+
+		
+		if (args[0].equals("a") || args[0].equals("r") ||  args[0].contains("+") || args[0].contains("?") || args[0].contains("c")){
+			System.out.println("Enter Correct argument..");
+			//return 0;
+			System.exit(0);
+
+		}
+			
 		Constants cons = new Constants();
 
 		// Check arguments
@@ -99,9 +109,9 @@ public class StudentList {
 		}
 
 
-		else {
-			System.out.println(" You enter a wrong argument");
-			return;
-		}
+		// else {
+		// 	System.out.println(" You enter a wrong argument. please Run Again..");
+		// 	return;
+		// }
 	}
 }
